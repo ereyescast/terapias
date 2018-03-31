@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Centro de Terapias Niño Jesús - Add/modify Contact</title>
+	<meta charset="utf-8" />
+	
+	 <!-- Bootstrap core CSS -->
+	<link rel="icon" href="images/terapias.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+ 	<link href="#" th:href="@{/css/contacts.css}" rel="stylesheet" />
+ 	
+</head>
+<body>
+
+
+	<div class="container">
+		<div class="wthree-heading">
+			<h1>Ingreso de datos</h1>
+		</div>
+			
+			<br/>
+			
+			<div class="panel panel-default">
+			<div class="panel-heading"></div>
+			<form action="#" th:action="@{/contacts/addcontact}" th:object="${triajeModel}" method="post">
+				<input type="hidden" th:field="*{id}"></input>
+				Nombre del Paciente: <input type="text" class="form-control" th:field="*{nombrepaciente}" th:value="${nombrepaciente}" ></input>
+				<br/>
+				Apellido del Paciente: <input type="text" class="form-control" th:field="*{apellidopaciente}" th:value="${apellidopaciente}" ></input>
+				<br/>
+				Nombre del Responsable: <input type="text" class="form-control" th:field="*{responsablenombre}" th:value="${responsablenombre}" ></input>
+				<br/>
+				Apellido del Responsable: <input type="text" class="form-control" th:field="*{responsableapellido}" th:value="${responsableapellido}" ></input>
+				<br/>
+				Telefono fijo: <input type="text" class="form-control" th:field="*{telefonofijo}" th:value="${telefonofijo}" ></input>
+				<br/>
+				Telefono celular: <input type="text" class="form-control" th:field="*{telefonocelular}" th:value="${telefonocelular}" ></input>
+				<br/>
+				<br/>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept
+				</button>
+				
+			</form>
+			<a href="#" th:href="@{/contacts/cancel}">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
+				</button>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>

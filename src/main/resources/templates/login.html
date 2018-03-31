@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<title>Centro de Terapias Niño Jesús - Signin</title>
+
+  <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!-- Custom styles for this template -->
+    <link rel="icon" href="images/terapias.ico" />
+    <link href="#" th:href="@{/css/login.css}" rel="stylesheet" />
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="wthree-heading">
+		
+		</div>
+		
+		<div class="wthree-heading">
+		<center><img src = "imgs/Logo.png" alt = "Logotipo"/></center> 
+		</div>
+		
+		<div>
+		
+		</div>
+		
+			
+			
+		<form class="form-signin" action="#" th:action="@{/logincheck}"
+					th:object="${userCredentials}" method="post">
+
+					
+					
+					
+					<div class="w3-user">
+							<span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+					<input	type="text" id="inputUsername" class="form-control"
+						placeholder="Username" th:field="*{username}" /> 
+					</div>
+					
+						
+					<div class="clear"></div>
+						<div class="w3-psw">
+							<span><i class="fa fa-key" aria-hidden="true"></i></span>
+					<input	type="password" id="inputPassword" class="form-control"
+						placeholder="Password" th:field="*{password}" />
+					</div>
+					<div class="clear"></div>
+					
+					<div th:if="${error!=null}" class="alert alert-danger" role="alert">Invalid
+						username or password</div>
+					<div th:if="${logout!=null}" class="alert alert-info" role="alert">Logout
+						successfully</div>
+						
+					<button class="btn btn-lg btn-primary btn-block" type="submit">
+        			<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login
+        			</button>
+        			
+        				<div>
+		
+		</div>
+		
+			
+				</form>
+		<div>
+		
+		</div>
+					<div class="agileits-footer">
+					<center><p>Centro de Terapias Niño Jesús &copy; All Rights Reserved </p></center>
+					</div>
+	
+
+		
+
+	</div>
+	<!-- /container -->
+	
+
+</body>
+</html>
